@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && node server.js",
+    "client": "cd frontend && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Henry_Smith",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

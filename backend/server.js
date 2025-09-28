@@ -1,10 +1,12 @@
-// server.js
 const express = require('express');
+const cors = require('cors'); // import
 const app = express();
 const PORT = 5000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World! Your Call of Duty gaming site backend is running.');
+app.use(cors()); // allow frontend to talk to backend
+
+app.get('/api/message', (req, res) => {
+  res.json({ message: 'Hello from the backend!' });
 });
 
 app.listen(PORT, () => {
